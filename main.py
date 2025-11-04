@@ -92,6 +92,36 @@ def main() -> None:
             kite, access_token = login(**kwargs)
         print("Login successful.")
         print(f"Access token: {access_token}")
+
+        # Fetch and print ALL orders (including REJECTED, COMPLETE)
+        try:
+            orders = kite.orders()
+        except Exception as e:
+            print(f"Failed to fetch Zerodha orders: {e}")
+            sys.exit(4)
+
+        # Print to console
+        print("Zerodha orders:")
+        for o in orders:
+            line = (
+                f"id={o.get('order_id')} status={o.get('status')} symbol={o.get('tradingsymbol')} "
+                f"exch={o.get('exchange')} qty={o.get('quantity')} filled={o.get('filled_quantity')} "
+                f"type={o.get('order_type')} side={o.get('transaction_type')} ts={o.get('order_timestamp')}"
+            )
+            print(line)
+
+        # Append to Orderlog.txt
+        try:
+            log_path = Path(__file__).parent / "Orderlog.txt"
+            with log_path.open("a", encoding="utf-8") as lf:
+                for o in orders:
+                    lf.write(
+                        f"Z-ORDER id={o.get('order_id')} status={o.get('status')} symbol={o.get('tradingsymbol')} "
+                        f"exch={o.get('exchange')} qty={o.get('quantity')} filled={o.get('filled_quantity')} "
+                        f"type={o.get('order_type')} side={o.get('transaction_type')} ts={o.get('order_timestamp')}\n"
+                    )
+        except Exception:
+            pass
     except Exception as exc:
         print(f"Login failed: {exc}")
         sys.exit(3)

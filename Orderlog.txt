@@ -1,0 +1,30 @@
+[2025-11-04 18:19:15] Successful login to Zerodha
+[2025-11-04 18:19:15] Successful login to 5paisa (Interactive + MarketData)
+[2025-11-04 18:19:15] Copy trader started. Multiplier=1
+[2025-11-04 18:19:15] Starting copy loop: polling Zerodha orders...
+[2025-11-04 18:19:16] Fetched 25 existing orders before copier start. These will NOT be tracked.
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190145648 symbol=NIFTY25N0425800PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190145649 symbol=NIFTY25N0425800PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190145653 symbol=NIFTY25N0425800PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190167513 symbol=NIFTY25N0425800PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190167517 symbol=NIFTY25N0425800PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190167520 symbol=NIFTY25N0425800PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221577 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221578 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221580 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221581 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221582 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279665 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279666 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279667 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279668 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279670 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321256 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321258 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321259 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321261 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321263 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321264 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321266 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321268 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321270 symbol=NIFTY25N0425750PE status=COMPLETE

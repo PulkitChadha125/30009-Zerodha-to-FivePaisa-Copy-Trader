@@ -1,0 +1,105 @@
+{
+  "orders": {
+    "251104190145648": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190145649": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190145653": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190167513": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190167517": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190167520": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190221577": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190221578": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190221580": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190221581": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190221582": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190279665": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190279666": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190279667": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190279668": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190279670": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190321256": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190321258": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190321259": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190321261": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190321263": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190321264": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190321266": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190321268": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251104190321270": {
+      "skipped": true,
+      "reason": "opened before start"
+    }
+  },
+  "_started": "2025-11-04T18:19:16.024995"
+}

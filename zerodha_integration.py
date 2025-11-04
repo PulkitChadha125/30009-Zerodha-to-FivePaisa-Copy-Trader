@@ -9,8 +9,11 @@ from urllib.parse import urlparse, parse_qs
 from kiteconnect import KiteConnect
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import pyotp
 
 
@@ -73,34 +76,135 @@ def login(
             driver = webdriver.Chrome(options=options)
         try:
             driver.get(kite.login_url())
-            driver.implicitly_wait(10)
+            wait = WebDriverWait(driver, 30)
 
             # Enter user id
-            username_el = driver.find_element(By.XPATH, '//*[@id="userid"]')
+            try:
+                username_el = wait.until(EC.presence_of_element_located((By.ID, 'userid')))
+            except Exception:
+                username_el = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="userid"]')))
             username_el.send_keys(user_id)
 
             # Enter password
-            password_el = driver.find_element(By.XPATH, '//*[@id="password"]')
+            try:
+                password_el = driver.find_element(By.ID, 'password')
+            except Exception:
+                password_el = driver.find_element(By.XPATH, '//*[@id="password"]')
             password_el.send_keys(password)
 
             # Click login button
-            login_btn = driver.find_element(By.XPATH, '//*[@id="container"]/div/div/div[2]/form/div[4]/button')
+            try:
+                login_btn = driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
+            except Exception:
+                login_btn = driver.find_element(By.XPATH, '//*[@id="container"]/div/div/div[2]/form/div[4]/button')
             login_btn.click()
 
-            # Wait and enter TOTP PIN
-            time.sleep(6)
-            pin_el = driver.find_element(By.XPATH, '//*[@id="container"]/div[2]/div/div[2]/form/div[1]/input')
+            # Wait and enter TOTP/PIN - first try explicit locators you provided
+            pin_locators = [
+                (By.XPATH, '/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div[2]/form/div[1]/input'),
+                (By.XPATH, '//*[@id="container"]/div[2]/div/div[2]/form/div[1]/input'),
+                (By.ID, 'userid'),  # External TOTP field (per provided DOM)
+                (By.ID, 'pin'),
+                (By.NAME, 'pin'),
+                (By.CSS_SELECTOR, 'input#pin'),
+                (By.CSS_SELECTOR, 'input[type="password"]'),
+                (By.XPATH, '//*[@id="container"]//form//input[@type="password"]'),
+                (By.XPATH, '//input[@type="password"]'),
+            ]
+
+            pin_el = None
+            last_err = None
+            for by, sel in pin_locators:
+                try:
+                    pin_el = WebDriverWait(driver, 10).until(EC.presence_of_element_located((by, sel)))
+                    if pin_el:
+                        break
+                except Exception as e:
+                    last_err = e
+                    continue
+            if pin_el is None:
+                try:
+                    driver.save_screenshot("zerodha_login_no_pin.png")
+                    Path("zerodha_login_no_pin.html").write_text(driver.page_source or "", encoding="utf-8")
+                except Exception:
+                    pass
+                raise Exception(f"Unable to locate TOTP/PIN field. Last error: {last_err}")
+            # Some UIs have 1 input; others split into 6 boxes. Handle both.
             totp = pyotp.TOTP(totp_secret)
             token = totp.now()
-            pin_el.send_keys(token)
+            try:
+                # Try multiple inputs first
+                otp_inputs = driver.find_elements(By.CSS_SELECTOR, 'input[type="password"]')
+                otp_inputs = [el for el in otp_inputs if el.is_displayed() and el.is_enabled()]
+                if len(otp_inputs) >= 4 and len(token) >= 4:
+                    for i, ch in enumerate(token[:len(otp_inputs)]):
+                        otp_inputs[i].clear()
+                        otp_inputs[i].send_keys(ch)
+                    # Press Enter on last box
+                    otp_inputs[min(len(otp_inputs)-1, len(token)-1)].send_keys(Keys.ENTER)
+                else:
+                    pin_el.clear()
+                    pin_el.send_keys(token)
+                    pin_el.send_keys(Keys.ENTER)
+            except Exception:
+                pin_el.clear()
+                pin_el.send_keys(token)
+                pin_el.send_keys(Keys.ENTER)
 
-            # Give time for redirect
-            time.sleep(6)
+            # If there's a submit/continue button after PIN, click it
+            cont_locators = [
+                (By.XPATH, '//*[@id="container"]/div[2]/div/div[2]/form/div[2]/button'),  # explicit continue
+                (By.CSS_SELECTOR, 'button[type="submit"]'),
+                (By.XPATH, '//*[@id="container"]/div[2]/div/div[2]/form//button'),
+                (By.XPATH, '//form//button[@type="submit"]'),
+            ]
+            for by, sel in cont_locators:
+                try:
+                    cont_btn = driver.find_element(by, sel)
+                    cont_btn.click()
+                    break
+                except Exception:
+                    continue
+
+            # Wait for redirect URL containing request_token (retry once if needed)
+            try:
+                wait.until(lambda d: "request_token=" in d.current_url)
+            except Exception:
+                # Retry once with a fresh TOTP in case the first expired
+                try:
+                    pin_el.clear()
+                except Exception:
+                    pass
+                # Re-locate pin field if needed
+                try:
+                    pin_el = driver.find_element(By.ID, 'pin')
+                except Exception:
+                    try:
+                        pin_el = driver.find_element(By.CSS_SELECTOR, 'input[type="password"]')
+                    except Exception:
+                        pin_el = driver.find_element(By.XPATH, '//input[@type="password"]')
+                token = pyotp.TOTP(totp_secret).now()
+                pin_el.send_keys(token)
+                for by, sel in cont_locators:
+                    try:
+                        cont_btn = driver.find_element(by, sel)
+                        cont_btn.click()
+                        break
+                    except Exception:
+                        continue
+                wait.until(lambda d: "request_token=" in d.current_url)
+
             url = driver.current_url
             parsed_url = urlparse(url)
             query_params = parse_qs(parsed_url.query)
             req_token = (query_params.get("request_token") or [None])[0]
             if not req_token:
+                # Persist debug artifacts for diagnosis
+                try:
+                    driver.save_screenshot("zerodha_login_debug.png")
+                    Path("zerodha_login_debug.html").write_text(driver.page_source or "", encoding="utf-8")
+                except Exception:
+                    pass
                 raise Exception("Failed to obtain request_token from redirected URL")
 
             # Save request_token
