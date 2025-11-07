@@ -99,6 +99,166 @@
     "251104190321270": {
       "skipped": true,
       "reason": "opened before start"
+    },
+    "251107190744752": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190745550": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190840702": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190846567": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190848165": {
+      "fivep": 1110067792,
+      "symbol": "NIFTY25N1125550CE",
+      "side": "BUY",
+      "qty": 75,
+      "tqty": 75
+    },
+    "251107190849221": {
+      "fivep": 1110067793,
+      "symbol": "NIFTY25N1125550CE",
+      "side": "SELL",
+      "qty": 75,
+      "tqty": 75
+    },
+    "251107190858423": {
+      "fivep": 1110067794,
+      "symbol": "NIFTY25N1125550CE",
+      "side": "BUY",
+      "qty": 75,
+      "tqty": 75
+    },
+    "251107190863171": {
+      "fivep": 1110067795,
+      "symbol": "NIFTY25N1125550CE",
+      "side": "SELL",
+      "qty": 75,
+      "tqty": 75
+    },
+    "251107190869178": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190871143": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190906030": {
+      "fivep": 1110067796,
+      "symbol": "NIFTY25N1125550CE",
+      "side": "BUY",
+      "qty": 75,
+      "tqty": 75
+    },
+    "251107190906956": {
+      "fivep": 1110067797,
+      "symbol": "NIFTY25N1125550CE",
+      "side": "SELL",
+      "qty": 75,
+      "tqty": 75
+    },
+    "251107190909751": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190911840": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190953676": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190956242": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190961783": {
+      "fivep": 1110067798,
+      "symbol": "BANKNIFTY25NOV59500CE",
+      "side": "BUY",
+      "qty": 35,
+      "tqty": 35
+    },
+    "251107190962450": {
+      "fivep": 1110067799,
+      "symbol": "BANKNIFTY25NOV59500CE",
+      "side": "SELL",
+      "qty": 35,
+      "tqty": 35
+    },
+    "251107190968104": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190972965": {
+      "skipped": true,
+      "reason": "opened before start"
+    },
+    "251107190997337": {
+      "fivep": 1110067800,
+      "symbol": "NIFTY25N1125550CE",
+      "side": "BUY",
+      "qty": 75,
+      "tqty": 75
+    },
+    "251107190999950": {
+      "fivep": 1110067801,
+      "symbol": "NIFTY25N1125550CE",
+      "side": "SELL",
+      "qty": 75,
+      "tqty": 75
+    },
+    "251107191002391": {
+      "fivep": 1110067802,
+      "symbol": "BANKNIFTY25NOV59500CE",
+      "side": "BUY",
+      "qty": 35,
+      "tqty": 35
+    },
+    "251107191005097": {
+      "fivep": 1110067803,
+      "symbol": "BANKNIFTY25NOV59500CE",
+      "side": "SELL",
+      "qty": 35,
+      "tqty": 35
+    },
+    "251107191016985": {
+      "fivep": 1110067804,
+      "symbol": "BANKNIFTY25NOV59500CE",
+      "side": "BUY",
+      "qty": 35,
+      "tqty": 35
+    },
+    "251107191017822": {
+      "fivep": 1110067805,
+      "symbol": "BANKNIFTY25NOV59500CE",
+      "side": "SELL",
+      "qty": 35,
+      "tqty": 35
+    },
+    "251107191036446": {
+      "fivep": 1110067806,
+      "symbol": "NIFTY25NOV26500CE",
+      "side": "BUY",
+      "qty": 75,
+      "tqty": 75
+    },
+    "251107191040654": {
+      "fivep": 1110067807,
+      "symbol": "NIFTY25NOV26500CE",
+      "side": "SELL",
+      "qty": 75,
+      "tqty": 75
     }
   },
   "_started": "2025-11-04T18:19:16.024995"

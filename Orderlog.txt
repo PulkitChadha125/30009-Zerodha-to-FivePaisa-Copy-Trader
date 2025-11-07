@@ -1,30 +1,708 @@
-[2025-11-04 18:19:15] Successful login to Zerodha
-[2025-11-04 18:19:15] Successful login to 5paisa (Interactive + MarketData)
-[2025-11-04 18:19:15] Copy trader started. Multiplier=1
-[2025-11-04 18:19:15] Starting copy loop: polling Zerodha orders...
-[2025-11-04 18:19:16] Fetched 25 existing orders before copier start. These will NOT be tracked.
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190145648 symbol=NIFTY25N0425800PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190145649 symbol=NIFTY25N0425800PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190145653 symbol=NIFTY25N0425800PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190167513 symbol=NIFTY25N0425800PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190167517 symbol=NIFTY25N0425800PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190167520 symbol=NIFTY25N0425800PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221577 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221578 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221580 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221581 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190221582 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279665 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279666 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279667 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279668 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190279670 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321256 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321258 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321259 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321261 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321263 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321264 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321266 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321268 symbol=NIFTY25N0425750PE status=COMPLETE
-[2025-11-04 18:19:16] Pre-start order not tracked: Z 251104190321270 symbol=NIFTY25N0425750PE status=COMPLETE
+[2025-11-07 13:34:47] Parsed NIFTY25N1125550CE: symbol=NIFTY, expiry=11Nov2025, strike=25550, type=CE
+[2025-11-07 13:34:47] Z COMPLETE 251107190906030 NIFTY25N1125550CE BUY zqty=75 -> 5p qty=75 inst=40109 price=98.65 adjusted=99.65
+[2025-11-07 13:34:47] Mapped Z 251107190906030 -> 5p 1110067796
+[2025-11-07 13:35:08] Parsed NIFTY25N1125550CE: symbol=NIFTY, expiry=11Nov2025, strike=25550, type=CE
+[2025-11-07 13:35:08] Z COMPLETE 251107190906956 NIFTY25N1125550CE SELL zqty=75 -> 5p qty=75 inst=40109 price=98.90 adjusted=97.90
+[2025-11-07 13:35:08] Mapped Z 251107190906956 -> 5p 1110067797
+[2025-11-07 13:35:52] Parsed BANKNIFTY25NOV59500CE: symbol=BANKNIFTY, expiry=01Nov2025, strike=59500, type=CE
+[2025-11-07 13:35:52] get_option_symbol failed for BANKNIFTY25NOV59500CE: {'type': 'error', 'code': 'e-instrunent-0013', 'description': 'Data not available'}
+[2025-11-07 13:35:52] Resolve failed for BANKNIFTY25NOV59500CE (NFO); skipping Z 251107190909751
+[2025-11-07 13:36:40] Parsed BANKNIFTY25NOV59500CE: symbol=BANKNIFTY, expiry=01Nov2025, strike=59500, type=CE
+[2025-11-07 13:36:40] get_option_symbol failed for BANKNIFTY25NOV59500CE: {'type': 'error', 'code': 'e-instrunent-0013', 'description': 'Data not available'}
+[2025-11-07 13:36:40] Resolve failed for BANKNIFTY25NOV59500CE (NFO); skipping Z 251107190911840
+[2025-11-07 13:52:49] Successful login to Zerodha
+[2025-11-07 13:52:49] Starting 5paisa login...
+[2025-11-07 13:52:49] Attempting 5paisa Interactive login...
+[2025-11-07 13:52:49] 5paisa Interactive login response: {
+  "type": "success",
+  "code": "s-user-0001",
+  "description": "Valid User.",
+  "result": {
+    "enums": {
+      "socketEvent": [
+        "joined",
+        "error",
+        "warning",
+        "success",
+        "order",
+        "trade",
+        "logout",
+        "position",
+        "tradeConversion",
+        "marketStatusUpdate",
+        "exchangeAdapterState",
+        "gttOrder",
+        "gttOrderRejection"
+      ],
+      "orderSide": [
+        "BUY",
+        "SELL"
+      ],
+      "orderSource": [
+        "TWS",
+        "TWSAPI",
+        "Web",
+        "WebAPI",
+        "MobileAndroid",
+        "MobileAndroidAPI",
+        "MobileWindows",
+        "MobileWindowsAPI",
+        "MobileIOS",
+        "MobileIOSAPI",
+        "OEMS",
+        "Algo",
+        "FIX"
+      ],
+      "positionSqureOffMode": [
+        "DayWise",
+        "NetWise"
+      ],
+      "positionSquareOffQuantityType": [
+        "Percentage",
+        "ExactQty"
+      ],
+      "dayOrNet": [
+        "DAY",
+        "NET"
+      ],
+      "instrumentType": [
+        "Futures",
+        "Options",
+        "Spread",
+        "Equity",
+        "Spot",
+        "PreferenceShares",
+        "Debentures",
+        "Warrants",
+        "Miscellaneous",
+        "MutualFund"
+      ],
+      "exchangeSegment": [
+        "NSECM",
+        "NSEFO",
+        "NSECD",
+        "NSECO",
+        "BSECM",
+        "BSEFO",
+        "BSECD",
+        "NCDEX",
+        "MSECM",
+        "MSEFO",
+        "MSECD",
+        "MCXFO"
+      ],
+      "exchangeInfo": {
+        "NSECM": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "4": "CNC",
+            "MIS": 1,
+            "CNC": 4,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "IOC"
+          ]
+        },
+        "NSEFO": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "MIS": 1,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "IOC"
+          ]
+        },
+        "BSECM": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "4": "CNC",
+            "MIS": 1,
+            "CNC": 4,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "IOC",
+            "EOS"
+          ]
+        },
+        "MCXFO": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "MIS": 1,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "GTC",
+            "IOC",
+            "GTD",
+            "EOS"
+          ]
+        }
+      }
+    },
+    "clientCodes": [
+      "56921755"
+    ],
+    "exchangeSegmentArray": [
+      {
+        "key": "NSECM",
+        "value": "NSECM"
+      },
+      {
+        "key": "NSEFO",
+        "value": "NSEFO"
+      },
+      {
+        "key": "BSECM",
+        "value": "BSECM"
+      },
+      {
+        "key": "MCXFO",
+        "value": "MCXFO"
+      }
+    ],
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI1NjkyMTc1NV9CRUIwNDI0M0VGRTI4NzZCQzY3MTE1IiwicHVibGljS2V5IjoiYmViMDQyNDNlZmUyODc2YmM2NzExNSIsImlzSW50ZXJhY3RpdmUiOnRydWUsImlhdCI6MTc2MjUwMzc2OSwiZXhwIjoxNzYyNTkwMTY5fQ.ru0sEZdykjjIZoAuSZsx0kEuzjnwhZnrapEpp0CmxGk",
+    "userID": "56921755",
+    "isInvestorClient": true,
+    "isOneTouchUser": false,
+    "application_expiry_date": "30-12-2030"
+  }
+}
+[2025-11-07 13:52:49] 5paisa Interactive login successful
+[2025-11-07 13:52:49] Attempting 5paisa MarketData login...
+[2025-11-07 13:52:49] 5paisa MarketData login response: {
+  "type": "success",
+  "code": "e-response-0010",
+  "description": "Provided Valid Credentials",
+  "result": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI1NjkyMTc1NV82ZGEyMjMxM2MyMzJmNDc0NDdiODg1IiwicHVibGljS2V5IjoiNmRhMjIzMTNjMjMyZjQ3NDQ3Yjg4NSIsImlhdCI6MTc2MjUwMzc2OSwiZXhwIjoxNzYyNTkwMTY5fQ.JAVb6f0JXapedVAeGUVGuAKgTxUE-xaXuAPa15LCd0s",
+    "userID": "56921755",
+    "appVersion": "5.0.15",
+    "application_expiry_date": "30-12-2030"
+  }
+}
+[2025-11-07 13:52:49] 5paisa MarketData login successful
+[2025-11-07 13:52:49] Successful login to 5paisa (Interactive + MarketData)
+[2025-11-07 13:52:49] Copy trader started. Multiplier=1
+[2025-11-07 13:52:49] Starting copy loop: polling Zerodha orders...
+[2025-11-07 13:52:50] Pre-start order skipped: Z 251107190909751 symbol=BANKNIFTY25NOV59500CE timestamp=2025-11-07 13:35:50
+[2025-11-07 13:52:50] Pre-start order skipped: Z 251107190911840 symbol=BANKNIFTY25NOV59500CE timestamp=2025-11-07 13:36:38
+[2025-11-07 13:53:37] Parsed BANKNIFTY25NOV59500CE: symbol=BANKNIFTY, expiry=01Nov2025, strike=59500, type=CE, is_monthly=True
+[2025-11-07 13:53:38] get_expiry_date failed for BANKNIFTY: {'result': ['2025-12-30T14:30:00', '2026-06-30T14:30:00', '2026-01-27T14:30:00', '2025-11-25T14:30:00', '2026-03-31T14:30:00', '2026-09-29T14:30:00']}
+[2025-11-07 13:53:38] get_option_symbol failed for BANKNIFTY25NOV59500CE: {'type': 'error', 'code': 'e-instrunent-0013', 'description': 'Data not available'}
+[2025-11-07 13:53:38] Resolve failed for BANKNIFTY25NOV59500CE (NFO); skipping Z 251107190953676
+[2025-11-07 13:56:15] Successful login to Zerodha
+[2025-11-07 13:56:15] Starting 5paisa login...
+[2025-11-07 13:56:15] Attempting 5paisa Interactive login...
+[2025-11-07 13:56:15] 5paisa Interactive login response: {
+  "type": "success",
+  "code": "s-user-0001",
+  "description": "Valid User.",
+  "result": {
+    "enums": {
+      "socketEvent": [
+        "joined",
+        "error",
+        "warning",
+        "success",
+        "order",
+        "trade",
+        "logout",
+        "position",
+        "tradeConversion",
+        "marketStatusUpdate",
+        "exchangeAdapterState",
+        "gttOrder",
+        "gttOrderRejection"
+      ],
+      "orderSide": [
+        "BUY",
+        "SELL"
+      ],
+      "orderSource": [
+        "TWS",
+        "TWSAPI",
+        "Web",
+        "WebAPI",
+        "MobileAndroid",
+        "MobileAndroidAPI",
+        "MobileWindows",
+        "MobileWindowsAPI",
+        "MobileIOS",
+        "MobileIOSAPI",
+        "OEMS",
+        "Algo",
+        "FIX"
+      ],
+      "positionSqureOffMode": [
+        "DayWise",
+        "NetWise"
+      ],
+      "positionSquareOffQuantityType": [
+        "Percentage",
+        "ExactQty"
+      ],
+      "dayOrNet": [
+        "DAY",
+        "NET"
+      ],
+      "instrumentType": [
+        "Futures",
+        "Options",
+        "Spread",
+        "Equity",
+        "Spot",
+        "PreferenceShares",
+        "Debentures",
+        "Warrants",
+        "Miscellaneous",
+        "MutualFund"
+      ],
+      "exchangeSegment": [
+        "NSECM",
+        "NSEFO",
+        "NSECD",
+        "NSECO",
+        "BSECM",
+        "BSEFO",
+        "BSECD",
+        "NCDEX",
+        "MSECM",
+        "MSEFO",
+        "MSECD",
+        "MCXFO"
+      ],
+      "exchangeInfo": {
+        "NSECM": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "4": "CNC",
+            "MIS": 1,
+            "CNC": 4,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "IOC"
+          ]
+        },
+        "NSEFO": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "MIS": 1,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "IOC"
+          ]
+        },
+        "BSECM": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "4": "CNC",
+            "MIS": 1,
+            "CNC": 4,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "IOC",
+            "EOS"
+          ]
+        },
+        "MCXFO": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "MIS": 1,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "GTC",
+            "IOC",
+            "GTD",
+            "EOS"
+          ]
+        }
+      }
+    },
+    "clientCodes": [
+      "56921755"
+    ],
+    "exchangeSegmentArray": [
+      {
+        "key": "NSECM",
+        "value": "NSECM"
+      },
+      {
+        "key": "NSEFO",
+        "value": "NSEFO"
+      },
+      {
+        "key": "BSECM",
+        "value": "BSECM"
+      },
+      {
+        "key": "MCXFO",
+        "value": "MCXFO"
+      }
+    ],
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI1NjkyMTc1NV9CRUIwNDI0M0VGRTI4NzZCQzY3MTE1IiwicHVibGljS2V5IjoiYmViMDQyNDNlZmUyODc2YmM2NzExNSIsImlzSW50ZXJhY3RpdmUiOnRydWUsImlhdCI6MTc2MjUwMzk3NSwiZXhwIjoxNzYyNTkwMzc1fQ.XU_cPyX-zRiCsDbR54YHuWAfSxpkZHrFi82r3-H3ty0",
+    "userID": "56921755",
+    "isInvestorClient": true,
+    "isOneTouchUser": false,
+    "application_expiry_date": "30-12-2030"
+  }
+}
+[2025-11-07 13:56:15] 5paisa Interactive login successful
+[2025-11-07 13:56:15] Attempting 5paisa MarketData login...
+[2025-11-07 13:56:15] 5paisa MarketData login response: {
+  "type": "success",
+  "code": "e-response-0010",
+  "description": "Provided Valid Credentials",
+  "result": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI1NjkyMTc1NV82ZGEyMjMxM2MyMzJmNDc0NDdiODg1IiwicHVibGljS2V5IjoiNmRhMjIzMTNjMjMyZjQ3NDQ3Yjg4NSIsImlhdCI6MTc2MjUwMzk3NSwiZXhwIjoxNzYyNTkwMzc1fQ.cwxw0NEjQ6oOafqoKfVR0gXByT6ArwkVkBGGrD6_Y0U",
+    "userID": "56921755",
+    "appVersion": "5.0.15",
+    "application_expiry_date": "30-12-2030"
+  }
+}
+[2025-11-07 13:56:15] 5paisa MarketData login successful
+[2025-11-07 13:56:15] Successful login to 5paisa (Interactive + MarketData)
+[2025-11-07 13:56:15] Copy trader started. Multiplier=1
+[2025-11-07 13:56:15] Starting copy loop: polling Zerodha orders...
+[2025-11-07 13:56:15] Pre-start order skipped: Z 251107190909751 symbol=BANKNIFTY25NOV59500CE timestamp=2025-11-07 13:35:50
+[2025-11-07 13:56:15] Pre-start order skipped: Z 251107190911840 symbol=BANKNIFTY25NOV59500CE timestamp=2025-11-07 13:36:38
+[2025-11-07 13:56:15] Pre-start order skipped: Z 251107190953676 symbol=BANKNIFTY25NOV59500CE timestamp=2025-11-07 13:53:35
+[2025-11-07 13:56:15] Pre-start order skipped: Z 251107190956242 symbol=BANKNIFTY25NOV59500CE timestamp=2025-11-07 13:54:40
+[2025-11-07 13:56:34] Parsed BANKNIFTY25NOV59500CE: symbol=BANKNIFTY, expiry=01Nov2025, strike=59500, type=CE, is_monthly=True
+[2025-11-07 13:56:34] Monthly expiry: Using expiry date 25Nov2025 for BANKNIFTY (matched from 1 dates in Nov 2025)
+[2025-11-07 13:56:35] Z COMPLETE 251107190961783 BANKNIFTY25NOV59500CE BUY zqty=35 -> 5p qty=35 inst=50101 price=156.40 adjusted=158.00
+[2025-11-07 13:56:35] Mapped Z 251107190961783 -> 5p 1110067798
+[2025-11-07 13:56:47] Parsed BANKNIFTY25NOV59500CE: symbol=BANKNIFTY, expiry=01Nov2025, strike=59500, type=CE, is_monthly=True
+[2025-11-07 13:56:47] Monthly expiry: Using expiry date 25Nov2025 for BANKNIFTY (matched from 1 dates in Nov 2025)
+[2025-11-07 13:56:48] Z COMPLETE 251107190962450 BANKNIFTY25NOV59500CE SELL zqty=35 -> 5p qty=35 inst=50101 price=157.50 adjusted=155.90
+[2025-11-07 13:56:48] Mapped Z 251107190962450 -> 5p 1110067799
+[2025-11-07 13:58:26] Parsed SENSEX25N1385300CE: symbol=SENSEX, expiry=13Nov2025, strike=85300, type=CE, is_monthly=False
+[2025-11-07 13:58:26] get_option_symbol failed for SENSEX25N1385300CE: {'type': 'error', 'code': 'e-instrunent-0013', 'description': 'Data not available'}
+[2025-11-07 13:58:26] Resolve failed for SENSEX25N1385300CE (BFO); skipping Z 251107190968104
+[2025-11-07 14:04:09] Successful login to Zerodha
+[2025-11-07 14:04:09] Starting 5paisa login...
+[2025-11-07 14:04:09] Attempting 5paisa Interactive login...
+[2025-11-07 14:04:09] 5paisa Interactive login response: {
+  "type": "success",
+  "code": "s-user-0001",
+  "description": "Valid User.",
+  "result": {
+    "enums": {
+      "socketEvent": [
+        "joined",
+        "error",
+        "warning",
+        "success",
+        "order",
+        "trade",
+        "logout",
+        "position",
+        "tradeConversion",
+        "marketStatusUpdate",
+        "exchangeAdapterState",
+        "gttOrder",
+        "gttOrderRejection"
+      ],
+      "orderSide": [
+        "BUY",
+        "SELL"
+      ],
+      "orderSource": [
+        "TWS",
+        "TWSAPI",
+        "Web",
+        "WebAPI",
+        "MobileAndroid",
+        "MobileAndroidAPI",
+        "MobileWindows",
+        "MobileWindowsAPI",
+        "MobileIOS",
+        "MobileIOSAPI",
+        "OEMS",
+        "Algo",
+        "FIX"
+      ],
+      "positionSqureOffMode": [
+        "DayWise",
+        "NetWise"
+      ],
+      "positionSquareOffQuantityType": [
+        "Percentage",
+        "ExactQty"
+      ],
+      "dayOrNet": [
+        "DAY",
+        "NET"
+      ],
+      "instrumentType": [
+        "Futures",
+        "Options",
+        "Spread",
+        "Equity",
+        "Spot",
+        "PreferenceShares",
+        "Debentures",
+        "Warrants",
+        "Miscellaneous",
+        "MutualFund"
+      ],
+      "exchangeSegment": [
+        "NSECM",
+        "NSEFO",
+        "NSECD",
+        "NSECO",
+        "BSECM",
+        "BSEFO",
+        "BSECD",
+        "NCDEX",
+        "MSECM",
+        "MSEFO",
+        "MSECD",
+        "MCXFO"
+      ],
+      "exchangeInfo": {
+        "NSECM": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "4": "CNC",
+            "MIS": 1,
+            "CNC": 4,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "IOC"
+          ]
+        },
+        "NSEFO": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "MIS": 1,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "IOC"
+          ]
+        },
+        "BSECM": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "4": "CNC",
+            "MIS": 1,
+            "CNC": 4,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "IOC",
+            "EOS"
+          ]
+        },
+        "MCXFO": {
+          "productType": {
+            "1": "MIS",
+            "2": "NRML",
+            "MIS": 1,
+            "NRML": 2
+          },
+          "orderType": [
+            "StopLimit",
+            "StopMarket",
+            "Limit",
+            "Market"
+          ],
+          "timeInForce": [
+            "DAY",
+            "GTC",
+            "IOC",
+            "GTD",
+            "EOS"
+          ]
+        }
+      }
+    },
+    "clientCodes": [
+      "56921755"
+    ],
+    "exchangeSegmentArray": [
+      {
+        "key": "NSECM",
+        "value": "NSECM"
+      },
+      {
+        "key": "NSEFO",
+        "value": "NSEFO"
+      },
+      {
+        "key": "BSECM",
+        "value": "BSECM"
+      },
+      {
+        "key": "MCXFO",
+        "value": "MCXFO"
+      }
+    ],
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI1NjkyMTc1NV9CRUIwNDI0M0VGRTI4NzZCQzY3MTE1IiwicHVibGljS2V5IjoiYmViMDQyNDNlZmUyODc2YmM2NzExNSIsImlzSW50ZXJhY3RpdmUiOnRydWUsImlhdCI6MTc2MjUwNDQ0OSwiZXhwIjoxNzYyNTkwODQ5fQ.h3uzD-LQQCCAXh0GIkw0EKvZms8-nH-_RcEsjqdz3C8",
+    "userID": "56921755",
+    "isInvestorClient": true,
+    "isOneTouchUser": false,
+    "application_expiry_date": "30-12-2030"
+  }
+}
+[2025-11-07 14:04:09] 5paisa Interactive login successful
+[2025-11-07 14:04:09] Attempting 5paisa MarketData login...
+[2025-11-07 14:04:09] 5paisa MarketData login response: {
+  "type": "success",
+  "code": "e-response-0010",
+  "description": "Provided Valid Credentials",
+  "result": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI1NjkyMTc1NV82ZGEyMjMxM2MyMzJmNDc0NDdiODg1IiwicHVibGljS2V5IjoiNmRhMjIzMTNjMjMyZjQ3NDQ3Yjg4NSIsImlhdCI6MTc2MjUwNDQ0OSwiZXhwIjoxNzYyNTkwODQ5fQ.Bie3kDNhlGlYYFngSrd09iZ92MHlhmF0uLNADH2770c",
+    "userID": "56921755",
+    "appVersion": "5.0.15",
+    "application_expiry_date": "30-12-2030"
+  }
+}
+[2025-11-07 14:04:09] 5paisa MarketData login successful
+[2025-11-07 14:04:09] Successful login to 5paisa (Interactive + MarketData)
+[2025-11-07 14:04:09] Copy trader started. Multiplier=1
+[2025-11-07 14:04:09] Starting copy loop: polling Zerodha orders...
+[2025-11-07 14:04:09] Pre-start order skipped: Z 251107190968104 symbol=SENSEX25N1385300CE timestamp=2025-11-07 13:58:24
+[2025-11-07 14:04:09] Pre-start order skipped: Z 251107190972965 symbol=SENSEX25N1385300CE timestamp=2025-11-07 13:59:51
+[2025-11-07 14:04:36] Parsed SENSEX25N1385300CE: symbol=SENSEX, expiry=13Nov2025, strike=85300, type=CE, is_monthly=False
+[2025-11-07 14:04:36] Using exchangeSegment=12 for SENSEX25N1385300CE (symbol=SENSEX)
+[2025-11-07 14:04:37] get_option_symbol failed for SENSEX25N1385300CE: {'type': 'error', 'code': 'e-instrunent-0013', 'description': 'Data not available'}
+[2025-11-07 14:04:37] Resolve failed for SENSEX25N1385300CE (BFO); skipping Z 251107190990071
+[2025-11-07 14:05:26] Parsed SENSEX25N1385300CE: symbol=SENSEX, expiry=13Nov2025, strike=85300, type=CE, is_monthly=False
+[2025-11-07 14:05:26] Using exchangeSegment=12 for SENSEX25N1385300CE (symbol=SENSEX)
+[2025-11-07 14:05:26] get_option_symbol failed for SENSEX25N1385300CE: {'type': 'error', 'code': 'e-instrunent-0013', 'description': 'Data not available'}
+[2025-11-07 14:05:26] Resolve failed for SENSEX25N1385300CE (BFO); skipping Z 251107190992755
+[2025-11-07 14:06:33] Parsed NIFTY25N1125550CE: symbol=NIFTY, expiry=11Nov2025, strike=25550, type=CE, is_monthly=False
+[2025-11-07 14:06:33] Using exchangeSegment=2 for NIFTY25N1125550CE (symbol=NIFTY)
+[2025-11-07 14:06:33] Z COMPLETE 251107190997337 NIFTY25N1125550CE BUY zqty=75 -> 5p qty=75 inst=40109 price=62.25 adjusted=62.90
+[2025-11-07 14:06:33] Mapped Z 251107190997337 -> 5p 1110067800
+[2025-11-07 14:07:21] Parsed NIFTY25N1125550CE: symbol=NIFTY, expiry=11Nov2025, strike=25550, type=CE, is_monthly=False
+[2025-11-07 14:07:21] Using exchangeSegment=2 for NIFTY25N1125550CE (symbol=NIFTY)
+[2025-11-07 14:07:22] Z COMPLETE 251107190999950 NIFTY25N1125550CE SELL zqty=75 -> 5p qty=75 inst=40109 price=62.80 adjusted=62.15
+[2025-11-07 14:07:22] Mapped Z 251107190999950 -> 5p 1110067801
+[2025-11-07 14:08:07] Parsed BANKNIFTY25NOV59500CE: symbol=BANKNIFTY, expiry=01Nov2025, strike=59500, type=CE, is_monthly=True
+[2025-11-07 14:08:08] Using exchangeSegment=2 for BANKNIFTY25NOV59500CE (symbol=BANKNIFTY)
+[2025-11-07 14:08:08] Monthly expiry: Using expiry date 25Nov2025 for BANKNIFTY (matched from 1 dates in Nov 2025)
+[2025-11-07 14:08:08] Z COMPLETE 251107191002391 BANKNIFTY25NOV59500CE BUY zqty=35 -> 5p qty=35 inst=50101 price=142.90 adjusted=144.35
+[2025-11-07 14:08:08] Mapped Z 251107191002391 -> 5p 1110067802
+[2025-11-07 14:09:07] Parsed BANKNIFTY25NOV59500CE: symbol=BANKNIFTY, expiry=01Nov2025, strike=59500, type=CE, is_monthly=True
+[2025-11-07 14:09:07] Using exchangeSegment=2 for BANKNIFTY25NOV59500CE (symbol=BANKNIFTY)
+[2025-11-07 14:09:07] Monthly expiry: Using expiry date 25Nov2025 for BANKNIFTY (matched from 1 dates in Nov 2025)
+[2025-11-07 14:09:07] Z COMPLETE 251107191005097 BANKNIFTY25NOV59500CE SELL zqty=35 -> 5p qty=35 inst=50101 price=143.20 adjusted=141.75
+[2025-11-07 14:09:07] Mapped Z 251107191005097 -> 5p 1110067803
+[2025-11-07 14:13:37] Parsed BANKNIFTY25NOV59500CE: symbol=BANKNIFTY, expiry=01Nov2025, strike=59500, type=CE, is_monthly=True
+[2025-11-07 14:13:37] Using exchangeSegment=2 for BANKNIFTY25NOV59500CE (symbol=BANKNIFTY)
+[2025-11-07 14:13:37] Monthly expiry: Using expiry date 25Nov2025 for BANKNIFTY (matched from 1 dates in Nov 2025)
+[2025-11-07 14:13:37] Z COMPLETE 251107191016985 BANKNIFTY25NOV59500CE BUY zqty=35 -> 5p qty=35 inst=50101 price=144.50 adjusted=145.95
+[2025-11-07 14:13:38] Mapped Z 251107191016985 -> 5p 1110067804
+[2025-11-07 14:14:02] Parsed BANKNIFTY25NOV59500CE: symbol=BANKNIFTY, expiry=01Nov2025, strike=59500, type=CE, is_monthly=True
+[2025-11-07 14:14:02] Using exchangeSegment=2 for BANKNIFTY25NOV59500CE (symbol=BANKNIFTY)
+[2025-11-07 14:14:03] Monthly expiry: Using expiry date 25Nov2025 for BANKNIFTY (matched from 1 dates in Nov 2025)
+[2025-11-07 14:14:03] Z COMPLETE 251107191017822 BANKNIFTY25NOV59500CE SELL zqty=35 -> 5p qty=35 inst=50101 price=143.85 adjusted=142.40
+[2025-11-07 14:14:03] Mapped Z 251107191017822 -> 5p 1110067805
+[2025-11-07 14:21:47] Parsed NIFTY25NOV26500CE: symbol=NIFTY, expiry=01Nov2025, strike=26500, type=CE, is_monthly=True
+[2025-11-07 14:21:47] Using exchangeSegment=2 for NIFTY25NOV26500CE (symbol=NIFTY)
+[2025-11-07 14:21:48] Monthly expiry: Using expiry date 25Nov2025 for NIFTY (matched from 3 dates in Nov 2025)
+[2025-11-07 14:21:48] Z COMPLETE 251107191036446 NIFTY25NOV26500CE BUY zqty=75 -> 5p qty=75 inst=53214 price=24.05 adjusted=24.30
+[2025-11-07 14:21:48] Mapped Z 251107191036446 -> 5p 1110067806
+[2025-11-07 14:23:19] Parsed NIFTY25NOV26500CE: symbol=NIFTY, expiry=01Nov2025, strike=26500, type=CE, is_monthly=True
+[2025-11-07 14:23:19] Using exchangeSegment=2 for NIFTY25NOV26500CE (symbol=NIFTY)
+[2025-11-07 14:23:20] Monthly expiry: Using expiry date 25Nov2025 for NIFTY (matched from 3 dates in Nov 2025)
+[2025-11-07 14:23:20] Z COMPLETE 251107191040654 NIFTY25NOV26500CE SELL zqty=75 -> 5p qty=75 inst=53214 price=24.70 adjusted=24.45
+[2025-11-07 14:23:20] Mapped Z 251107191040654 -> 5p 1110067807

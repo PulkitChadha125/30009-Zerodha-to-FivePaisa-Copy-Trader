@@ -46,9 +46,13 @@ def login(
     # If a request_token is already available, use it directly
     if request_token:
         try:
+            print("[Zerodha] Using existing request_token. Exchanging for access_token in 2s...")
+            time.sleep(2)
             session_data: Dict[str, str] = kite.generate_session(request_token, api_secret=api_secret)
             access_token: str = session_data["access_token"]
             kite.set_access_token(access_token)
+            print("[Zerodha] Access token set. Proceeding in 2s...")
+            time.sleep(2)
             return kite, access_token
         except Exception as exc:
             raise Exception(f"Zerodha login failed: {exc}") from exc
@@ -75,7 +79,9 @@ def login(
             # Use Selenium Manager to auto-download/manage the correct driver
             driver = webdriver.Chrome(options=options)
         try:
+            print("[Zerodha] Opening login page. Waiting 2s...")
             driver.get(kite.login_url())
+            time.sleep(2)
             wait = WebDriverWait(driver, 30)
 
             # Enter user id
@@ -84,6 +90,8 @@ def login(
             except Exception:
                 username_el = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="userid"]')))
             username_el.send_keys(user_id)
+            print("[Zerodha] Entered user ID. Waiting 2s before entering password...")
+            time.sleep(2)
 
             # Enter password
             try:
@@ -91,6 +99,8 @@ def login(
             except Exception:
                 password_el = driver.find_element(By.XPATH, '//*[@id="password"]')
             password_el.send_keys(password)
+            print("[Zerodha] Entered password. Waiting 2s before clicking login...")
+            time.sleep(2)
 
             # Click login button
             try:
@@ -98,30 +108,43 @@ def login(
             except Exception:
                 login_btn = driver.find_element(By.XPATH, '//*[@id="container"]/div/div/div[2]/form/div[4]/button')
             login_btn.click()
+            print("[Zerodha] Clicked login. Waiting 2s for 2FA screen...")
+            time.sleep(2)
 
-            # Wait and enter TOTP/PIN - first try explicit locators you provided
-            pin_locators = [
-                (By.XPATH, '/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div[2]/form/div[1]/input'),
-                (By.XPATH, '//*[@id="container"]/div[2]/div/div[2]/form/div[1]/input'),
-                (By.ID, 'userid'),  # External TOTP field (per provided DOM)
-                (By.ID, 'pin'),
-                (By.NAME, 'pin'),
-                (By.CSS_SELECTOR, 'input#pin'),
-                (By.CSS_SELECTOR, 'input[type="password"]'),
-                (By.XPATH, '//*[@id="container"]//form//input[@type="password"]'),
-                (By.XPATH, '//input[@type="password"]'),
-            ]
-
+            # Wait and enter TOTP/PIN - target numeric 6-digit field; avoid selecting the password field
             pin_el = None
             last_err = None
-            for by, sel in pin_locators:
-                try:
-                    pin_el = WebDriverWait(driver, 10).until(EC.presence_of_element_located((by, sel)))
-                    if pin_el:
-                        break
-                except Exception as e:
-                    last_err = e
-                    continue
+            try:
+                # Most reliable: 6-digit numeric field
+                pin_el = WebDriverWait(driver, 20).until(
+                    EC.visibility_of_element_located((By.XPATH, "//input[@type='number' and @maxlength='6']"))
+                )
+            except Exception as e:
+                last_err = e
+                # exhaustive fallbacks (explicit 2FA container path first)
+                pin_locators = [
+                    (By.XPATH, '//*[@id="container"]/div[2]/div/div[2]/form/div[1]/input'),
+                    (By.XPATH, '/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div[2]/form/div[1]/input'),
+                    (By.ID, 'pin'),
+                    (By.NAME, 'pin'),
+                    (By.CSS_SELECTOR, 'input#pin'),
+                    (By.CSS_SELECTOR, "input[placeholder='••••••']"),
+                ]
+                for by, sel in pin_locators:
+                    try:
+                        candidate = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((by, sel)))
+                        # Avoid password field
+                        cid = (candidate.get_attribute('id') or '').lower()
+                        cname = (candidate.get_attribute('name') or '').lower()
+                        itype = (candidate.get_attribute('type') or '').lower()
+                        if cid == 'password' or cname == 'password':
+                            continue
+                        pin_el = candidate
+                        if pin_el:
+                            break
+                    except Exception as e2:
+                        last_err = e2
+                        continue
             if pin_el is None:
                 try:
                     driver.save_screenshot("zerodha_login_no_pin.png")
@@ -132,8 +155,17 @@ def login(
             # Some UIs have 1 input; others split into 6 boxes. Handle both.
             totp = pyotp.TOTP(totp_secret)
             token = totp.now()
+            print("[Zerodha] Ready to enter TOTP. Waiting 2s so you can observe...")
+            time.sleep(2)
             try:
                 # Try multiple inputs first
+                # Focus the element first (helps some numeric inputs)
+                try:
+                    driver.execute_script("arguments[0].scrollIntoView({block:'center'});", pin_el)
+                    pin_el.click()
+                except Exception:
+                    pass
+
                 otp_inputs = driver.find_elements(By.CSS_SELECTOR, 'input[type="password"]')
                 otp_inputs = [el for el in otp_inputs if el.is_displayed() and el.is_enabled()]
                 if len(otp_inputs) >= 4 and len(token) >= 4:
@@ -143,13 +175,21 @@ def login(
                     # Press Enter on last box
                     otp_inputs[min(len(otp_inputs)-1, len(token)-1)].send_keys(Keys.ENTER)
                 else:
-                    pin_el.clear()
+                    try:
+                        pin_el.clear()
+                    except Exception:
+                        pass
                     pin_el.send_keys(token)
                     pin_el.send_keys(Keys.ENTER)
             except Exception:
-                pin_el.clear()
+                try:
+                    pin_el.clear()
+                except Exception:
+                    pass
                 pin_el.send_keys(token)
                 pin_el.send_keys(Keys.ENTER)
+            print("[Zerodha] Entered TOTP. Waiting 2s before continuing...")
+            time.sleep(2)
 
             # If there's a submit/continue button after PIN, click it
             cont_locators = [
@@ -165,6 +205,8 @@ def login(
                     break
                 except Exception:
                     continue
+            print("[Zerodha] Clicked continue. Waiting 2s for redirect...")
+            time.sleep(2)
 
             # Wait for redirect URL containing request_token (retry once if needed)
             try:
@@ -175,15 +217,30 @@ def login(
                     pin_el.clear()
                 except Exception:
                     pass
-                # Re-locate pin field if needed
+                # Re-locate pin field if needed (prefer numeric 6-digit field; avoid password)
                 try:
-                    pin_el = driver.find_element(By.ID, 'pin')
+                    pin_el = WebDriverWait(driver, 10).until(
+                        EC.visibility_of_element_located((By.XPATH, "//input[@type='number' and @maxlength='6']"))
+                    )
                 except Exception:
                     try:
-                        pin_el = driver.find_element(By.CSS_SELECTOR, 'input[type="password"]')
+                        pin_el = WebDriverWait(driver, 10).until(
+                            EC.visibility_of_element_located((By.XPATH, '//*[@id="container"]/div[2]/div/div[2]/form/div[1]/input'))
+                        )
                     except Exception:
-                        pin_el = driver.find_element(By.XPATH, '//input[@type="password"]')
+                        try:
+                            pin_el = driver.find_element(By.ID, 'pin')
+                        except Exception:
+                            try:
+                                pin_el = driver.find_element(By.CSS_SELECTOR, "input[placeholder='••••••']")
+                            except Exception:
+                                pin_el = driver.find_element(By.XPATH, "//input[@type='password']")
                 token = pyotp.TOTP(totp_secret).now()
+                try:
+                    driver.execute_script("arguments[0].scrollIntoView({block:'center'});", pin_el)
+                    pin_el.click()
+                except Exception:
+                    pass
                 pin_el.send_keys(token)
                 for by, sel in cont_locators:
                     try:
@@ -193,6 +250,8 @@ def login(
                     except Exception:
                         continue
                 wait.until(lambda d: "request_token=" in d.current_url)
+                print("[Zerodha] Retried TOTP. Waiting 2s for redirect...")
+                time.sleep(2)
 
             url = driver.current_url
             parsed_url = urlparse(url)
@@ -209,6 +268,8 @@ def login(
 
             # Save request_token
             Path("request_token.txt").write_text(req_token, encoding="utf-8")
+            print("[Zerodha] Captured request_token. Waiting 2s before closing browser...")
+            time.sleep(2)
 
         finally:
             try:
@@ -218,12 +279,16 @@ def login(
 
         # Exchange request_token for access_token
         try:
+            print("[Zerodha] Exchanging request_token for access_token in 2s...")
+            time.sleep(2)
             session_data: Dict[str, str] = kite.generate_session(req_token, api_secret=api_secret)
             access_token: str = session_data["access_token"]
             kite.set_access_token(access_token)
 
             # Persist access token
             Path("access_token.txt").write_text(access_token, encoding="utf-8")
+            print("[Zerodha] Access token saved. Waiting 2s before returning...")
+            time.sleep(2)
 
             return kite, access_token
         except Exception as exc:

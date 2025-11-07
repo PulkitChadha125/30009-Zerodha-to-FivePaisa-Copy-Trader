@@ -257,6 +257,7 @@ class XTSConnect(XTSCommon):
                     clientID=None
                     ):
         """To place an order"""
+        response = None
         try:
 
             params = {
@@ -280,7 +281,9 @@ class XTSConnect(XTSCommon):
             response = self._post('order.place', json.dumps(params))
             return response
         except Exception as e:
-            return response['description']
+            if response and isinstance(response, dict) and 'description' in response:
+                return response['description']
+            return {'type': 'error', 'description': str(e)}
 
     def modify_order(self,
                      appOrderID,
